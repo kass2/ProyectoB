@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+ 
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <a href="/" class="="navbar-brand>Clientes </a>
+    </nav>
+
+    <div class="container" style="margin-left: 2%;">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/update/<%= cos._id %>" method="POST">
+                                <div class="form-group">
+                                    <input type="text" name="Address" class="form-control" value="<%= cos.Address %>">
+                                </div>
+                                <div class="form-group">
+                                <input type="text" name="City" class="form-control" value="<%= cos.City %>">
+                                </div>
+                                 
+                                <div class="form-group">
+                                    <input type="text" name="Country" class="form-control" value="<%= cos.Country %>">
+                                    </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="District" class="form-control" value="<%= cos.District %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="FirstName" class="form-control" value="<%= cos.FirstName %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="LastName" class="form-control" value="<%= cos.LastName %>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Status" class="form-control" value="<%= cos.Status %>">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Update</button>
+            
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+    </div>
+    </div>
+   
+</body>
+</html>
