@@ -1,17 +1,25 @@
 const express = require ('express');
 const router = express.Router();
 
-//app.use(express.json())
+//conection url
+const url = 'mongodb://localhost:27017';
+const dbname  = "sample_airbnb"
+
+//create a new Mongocliente
+const client = new MongoClient(url, {useUnifiedTopology: true});
+
+app.use(express.json())
 router.get('/casas', async(req, res) => {
 const casas = await casas.aggregate([
         {
             $lookup: {
-              from: Rentas,
+              from: rentas,
               localField: '_id',
-              foreignField:'id_customers',
+              foreignField:'_id',
               as:'Rentas'
             }
         }
     ])
-    //res.json(casas);
+    res.json(casas);
   });
+
