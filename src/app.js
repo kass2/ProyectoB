@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/sample_airbnb')
 
 //import routes
 const IndexRoutes = require ('./routes/index');
+const Casa = require ('./routes/Casas');
 
 //settings
 app.set('port', process.env.PORT || 3000);
@@ -20,10 +21,12 @@ app.set('view engine','ejs');
 
 //middlewares
 app.use(morgan('dev'));
+app.use(express.json())
 app.use(express.urlencoded({extended: false}));
 
 //routes
 app.use('/', IndexRoutes);
+app.use('/casa' , Casa)
 
 //starting the server
 app.listen( app.get('port'), () =>{

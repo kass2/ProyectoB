@@ -1,15 +1,15 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
-const MongoClient = require('mongodb').MongoClient;
 
 
-const casaSchema = new Schema({
+
+const casa = new Schema({
     
     name:String,
     description:String,
     bed_type:String,
-    price:int,
-    id_customers:int
+    price:Number,
+    id_customers:Number
 });
 
-module.exports = mongoose.model('rentas',casaSchema);
+module.exports = mongoose.model('Casas',casa);
