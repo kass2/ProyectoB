@@ -11,4 +11,4 @@ const casaSchema = new Schema({
     id_customers:int
 });
 
-module.exports = mongoose.model('Rentas',casaSchema);
+module.exports = mongoose.model('rentas',casaSchema);
