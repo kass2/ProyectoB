@@ -15,6 +15,13 @@ router.post('/add', async(req , res)=>{
     await cos.save();
    res.redirect('/');
 });
+router.get('/turn/:id', async(req , res) =>{
+    const { id } = req.params;
+    const cos = await costumer.findById(id);
+    cos.status = !cos.status;
+    await cos.save();
+   res.redirect('/')
+});
 
 router.get('/delete/:id', async(req , res)=>{
     const { id } = req.params;

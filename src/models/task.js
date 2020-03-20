@@ -9,7 +9,10 @@ const clienteSchema = new Schema({
     District: String,
     FirstName:String,
     LastName: String,
-    Status:String
+    status: {
+        type: Boolean,
+        default: false
+    }
 });
 
 module.exports = mongoose.model('Customers',clienteSchema);
