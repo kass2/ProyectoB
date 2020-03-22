@@ -1,4 +1,9 @@
 # ProyectoB
+Kassandra Andrea Avila Vargas 180352
+Natalia Valdes Serrano  180291
+Grupo 5°A
+TIDSM
+
 
 parte 6
 http://localhost:3000/a
