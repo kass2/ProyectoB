@@ -16,6 +16,7 @@ router.post('/add', async(req , res)=>{
     await cos.save();
    res.redirect('/');
 });
+
 router.get('/turn/:id', async(req , res) =>{
     const { id } = req.params;
     const cos = await customerModelo.findById(id);
@@ -36,7 +37,12 @@ router.get('/update/:id', async(req , res)=>{
          cos
     })
  });
-
+ router.post('/buscador', async(req , res)=>{
+    const { id } = req.params;
+    await customerModelo.findById(id);
+    console.log(req.params)
+    res.redirect('/');
+});
  router.post('/update/:id', async(req , res)=>{
     const { id } = req.params;
     await customerModelo.update({_id: id}, req.body); 

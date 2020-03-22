@@ -4,7 +4,7 @@ const router = express.Router();
 const casa = {};
 
 //punto 6
-router.post('/lol', async(req, res) =>{
+router.post('/ren', async(req, res) =>{
     const casa = new casaModelo({
         name: req.body.name,
         decription: req.body.description,

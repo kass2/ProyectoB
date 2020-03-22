@@ -5,12 +5,30 @@ autoIncrement.initialize(mongoose);
 
 
 const customers = new Schema({
-    Address:String,
-    City:String,
-    Country:String,
-    District: String,
-    FirstName:String,
-    LastName: String,
+    Address:{
+      type: String,
+      required: true
+    },
+    City:{
+        type: String,
+        required: true
+      },
+    Country:{
+        type: String,
+        required: true
+      },
+    District: {
+        type: String,
+        required: true
+      },
+    FirstName:{
+        type: String,
+        required: true
+      },
+    LastName:{
+        type: String,
+        required: true
+      },
     status: {
         type: Boolean,
         default: false
