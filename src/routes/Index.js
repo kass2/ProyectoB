@@ -37,10 +37,10 @@ router.get('/update/:id', async(req , res)=>{
          cos
     })
  });
- router.post('/buscador', async(req , res)=>{
+ router.get('/buscador', async(req , res)=>{
     const { id } = req.params;
+    console.log(id);
     await customerModelo.findById(id);
-    console.log(req.params)
     res.redirect('/');
 });
  router.post('/update/:id', async(req , res)=>{
