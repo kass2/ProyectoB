@@ -37,10 +37,10 @@ router.get('/update/:id', async(req , res)=>{
          cos
     })
  });
- router.get('/buscador', async(req , res)=>{
+ router.get('/buscador/:id', async(req , res)=>{
     const { id } = req.params;
-    console.log(id);
-    await customerModelo.findById(id);
+    await customerModelo.findById({_id: id});
+    console.log({_id: id})
     res.redirect('/');
 });
  router.post('/update/:id', async(req , res)=>{
@@ -48,6 +48,8 @@ router.get('/update/:id', async(req , res)=>{
     await customerModelo.update({_id: id}, req.body); 
     res.redirect('/')
  });
+
+
 
  router.get('/a', async(req, res) => {
      const nombre = casaModelo.collection.collectionName;
