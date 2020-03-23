@@ -37,12 +37,22 @@ router.get('/update/:id', async(req , res)=>{
          cos
     })
  });
- router.get('/buscador', async(req , res)=>{
-    const { id } = req.params;
-    console.log(id);
-    await customerModelo.findById(id);
-    res.redirect('/');
+ 
+ router.get('/buscador/:_id', async(req , res)=>{
+    const ids = await customerModelo.findById({"_id":req.params._id});
+    res.json(ids);
 });
+
+router.get('/country/:Country', async(req , res)=>{
+    const pais = await customerModelo.find({"Country":req.params.Country});
+    res.json(pais);
+});
+
+router.get('/busca/:FirstName', async(req , res)=>{
+    const name = await customerModelo.find({"FirstName":req.params.FirstName});
+    res.json(name);
+});
+
  router.post('/update/:id', async(req , res)=>{
     const { id } = req.params;
     await customerModelo.update({_id: id}, req.body); 
